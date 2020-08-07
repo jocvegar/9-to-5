@@ -1,24 +1,7 @@
-# 5-pm-timer
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8a3a1ba7-ed8a-4097-8664-9f27effc3231/deploy-status)](https://app.netlify.com/sites/9to5/deploys)
 
-## Project setup
-```
-npm install
-```
+# 5 to 9
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Counting the millisecond until we leave....
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[Eagerly await with me](https://9to5.netlify.app/).
