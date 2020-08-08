@@ -24,17 +24,33 @@ export default {
     let now = new Date();
     if (now.getHours() >= 17 ) { 
       this.showTime = false
-      return
+    } else {
+      this.startTimer(now);
     }
-    let fivePm = now.setHours(17,0,0,0);
-    setInterval(function() {
-      let elapsedTime = fivePm - Date.now();
-      let hours = Math.floor(elapsedTime / 3600000);
-      let minsInMs = Math.floor(elapsedTime % 3600000);
-      if (document.getElementById("timer")) {
-        document.getElementById("timer").innerHTML = `${hours}.${minsInMs}`
-      }
-    }, 1);
+  },
+  methods: {
+    startTimer(timeNow) {
+      let _this = this
+      let now = timeNow
+      let fivePm = now.setHours(17,0,0,0);
+      var interval = setInterval(function() {
+        let elapsedTime = fivePm - Date.now();
+
+        if (elapsedTime <= 0) {
+          _this.letsGo()
+          clearInterval(interval);
+        }
+
+        let hours = Math.floor(elapsedTime / 3600000);
+        let minsInMs = Math.floor(elapsedTime % 3600000);
+        if (document.getElementById("timer")) {
+          document.getElementById("timer").innerHTML = `${hours}.${minsInMs}`
+        }
+      }, 1);
+    },
+    letsGo() {
+      this.showTime = false
+    }
   }
 }
 </script>
